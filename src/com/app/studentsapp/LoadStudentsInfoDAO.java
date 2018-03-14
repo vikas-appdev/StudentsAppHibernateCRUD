@@ -9,13 +9,13 @@ public class LoadStudentsInfoDAO {
 		Configuration config = new Configuration();
 		config.configure();
 		config.addAnnotatedClass(StudentsInfoDTO.class);
-		
+
 		SessionFactory sfx = config.buildSessionFactory();
 		Session session = sfx.openSession();
 		StudentsInfoDTO student = session.load(StudentsInfoDTO.class, 28);
-		
+
 		System.out.println(student.getFirstName());
-		
+
 	}
 
 }

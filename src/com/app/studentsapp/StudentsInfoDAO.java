@@ -12,16 +12,16 @@ public class StudentsInfoDAO {
 		sinfo.setFirstName("Test");
 		sinfo.setMiddleName("MidlleNamwe");
 		sinfo.setLastName("OtherLast");
-		
+
 		Configuration config = new Configuration();
 		config.configure();
 		config.addAnnotatedClass(StudentsInfoDTO.class);
-		
-		SessionFactory sf =  config.buildSessionFactory();
+
+		SessionFactory sf = config.buildSessionFactory();
 		Session sess = sf.openSession();
-		
+
 		sess.save(sinfo);
-		
+
 		Transaction tx = sess.beginTransaction();
 		tx.commit();
 	}
