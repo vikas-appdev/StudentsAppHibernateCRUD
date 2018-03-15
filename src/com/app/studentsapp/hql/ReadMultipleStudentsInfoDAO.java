@@ -9,21 +9,21 @@ import org.hibernate.cfg.Configuration;
 import com.app.studentsapp.StudentsInfoDTO;
 
 public class ReadMultipleStudentsInfoDAO {
-	
+
 	public static void main(String[] args) {
 		Configuration config = new Configuration();
 		config.configure();
 		config.addAnnotatedClass(StudentsInfoDTO.class);
-		
+
 		Session session = config.buildSessionFactory().openSession();
-		
-		//Create query
+
+		// Create query
 		String hql = "from StudentsInfoDTO";
-		Query query =  session.createQuery(hql);
-		
-		//Process results using list() method it will return List
+		Query query = session.createQuery(hql);
+
+		// Process results using list() method it will return List
 		List<StudentsInfoDTO> studentsInfoDTOs = query.list();
-		
+
 		for (StudentsInfoDTO studentsInfoDTO : studentsInfoDTOs) {
 			System.out.println(studentsInfoDTO.getRegNo());
 			System.out.println(studentsInfoDTO.getFirstName());
