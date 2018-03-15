@@ -22,6 +22,7 @@ public class ReadMultipleStudentsInfoDAO {
 		Query query = session.createQuery(hql);
 
 		// Process results using list() method it will return List
+		
 		List<StudentsInfoDTO> studentsInfoDTOs = query.list();
 
 		for (StudentsInfoDTO studentsInfoDTO : studentsInfoDTOs) {

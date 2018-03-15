@@ -33,6 +33,7 @@ public class ReadOneRecordStudentsInfoDAO {
 		 * our code for example we can use config.buildSessionFactory().openSession();
 		 * and directly store it as Session.
 		 */
+		
 		SessionFactory sf = config.buildSessionFactory();
 		Session session = sf.openSession();
 
